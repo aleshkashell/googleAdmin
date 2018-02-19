@@ -9,16 +9,18 @@ import json
 from datetime import datetime
 import re
 
+####### Поправьте данные в соответствии с вашим случаем
 # Email of the Service Account
 SERVICE_ACCOUNT_EMAIL = 'your_account_name.iam.gserviceaccount.com'
 
 # Path to the Service Account8b1ec96's Private Key file
 SERVICE_ACCOUNT_PKCS12_FILE_PATH = os.path.expanduser('~/Documents/.secret/service.p12')
 adminEmail = 'adminEmail@yourdomain.ru'
-mainDomain = 'yourdomain.com'
+mainDomain = 'yourdomain.ru'
 siteName = 'yourdomain'
 newDomain = 'com'
 currentDomain = 'ru'
+##########################################################
 
 def get_credentials(email):
     #Авторизация и делегация на пользователя e-mail
