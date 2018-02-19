@@ -412,11 +412,12 @@ def updateSignatureFromGoogle(email): #For 'ru' & 'com'
 
 
 def main():
-#Снять следующий комментарий перед восстановлением из бекапа
-#"""
     now = datetime.now()
     hFile = str(now.month) + str(now.day)
     global adminEmail # Needed to modify global copy of globvar
+    
+#Снять следующий комментарий перед восстановлением из бекапа
+#"""  
     #Делаем backup
     print("Делаем backup")
     backUpInfo(siteName + hFile)
@@ -426,14 +427,13 @@ def main():
     #Мигририум собственный аккаунт
     print("Мигрируем собственный аккаунт")
     renameUser(adminEmail, newDomain)
-    #
+    
+    #Ожидаем завершения ручных операций по смене главного домена
+    #Авторизуем api в новом домене
+    """
     print("Переименовываем adminEmail")
     adminEmail = changeMailDomain(adminEmail, newDomain)
     print(adminEmail)
-
-    #Ожидаем завершения операции смены главного домена
-    #Авторизуем api в новом домене
-    """
     #restore alias
     path = os.path.expanduser('~/Documents/backup/')
     usersAliases = path + siteName + hFile + "UsersAliases.json"
