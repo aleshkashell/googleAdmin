@@ -470,15 +470,6 @@ def update_information(userEmail, post, department, telephone):
     service.users().update(userKey=userEmail, body=patch).execute()
 
 
-def update_all_user_post():
-    users = getPixTeam.getPixTeam()
-    for email, post, department in users:
-        result = update_information(adminEmail=adminEmail, userEmail=email, post=post, department=department)
-        print(email, post, department)
-        print(result)
-    print("Done")
-
-
 def update_signature_from_google(email): #For 'ru' & 'com'
     full_name = get_user(email=email)['name']['fullName']
     post = get_user(email=email)['organizations'][0]['title']
