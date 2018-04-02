@@ -148,7 +148,7 @@ def create_signature(post, name, surname='', telephone='', skype=''):
     if not skype == '':
         template = template + '<div style="font-family:helvetica,arial;font-size:13px">Skype: ' + skype + '</div>'
     if not telephone == '':
-        template = template + '<div>Tel: <a dir="ltr" href="tel:+%207%20916%207183639" target="_blank">' + telephone + '</a></div>'
+        template = template + '<div>Tel: <a dir="ltr" href="tel:' + telephone + '" target="_blank">' + telephone + '</a></div>'
     template += '<div><img src="https://ci4.googleusercontent.com/proxy/vsSFXEeaHOwP-g7pKbqB00dUtC1wwA1I_iG1KWsVXUfKDQg6Vvasf9u2LXsT1QYZI1YruapYZg=s0-d-e1-ft#http://cdn.pixapi.net/pixonic.png" width="250" class="CToWUd"></div><div><span style="color:rgb(0,0,0);font-size:9px">This e-mail and the attachments, if any, are confidential and may be legally privileged, and are for the sole use of the intended recipient. If you are not the intended recipient of this e-mail or any part of it, please delete it from your computer.</span></div></div></div>'
     return {'signature': template}
 
